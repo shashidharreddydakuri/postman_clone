@@ -38,12 +38,16 @@ form.addEventListener('submit', (e) => {
 		document
 			.querySelector('[data-response-section]')
 			.classList.remove('d-none');
-			// updateResponseDetails(response)
+			updateResponseDetails(response)
 			// updateResponseEditor(response)
 			updateResponseHeaders(response.headers)
 		console.log(response)
 	})
 });
+
+function updateResponseDetails(response) {
+	document.querySelector('[data-status]').textContent = response.status
+}
 
 function updateResponseHeaders(headers) {
 	responseHeadersContainer.innerHTML = ""
